@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        <script>
+         
+        let humanScore = 0
+        let computerScore = 0    
+
+        
+
+         //Return either 'rock', 'paper', or 'scissors' depending on the users choice
+        function getHumanChoice(){
+        
+        
+        //User is prompted to enter either 'rock', 'paper', or 'scissors'
+        let choice = prompt('Rock, Paper, or Scissors?');
+        choice = choice.toLowerCase ();
+        //If user enters 'rock', return 'rock'
+        //If user enters 'paper', return 'paper'
+        //If user enters 'scissors', return 'scissors'
+       
+        if (choice === 'rock') {
+            return 'Rock'
+        } else if (choice === 'paper'){
+            return 'Paper'
+        } else if (choice === 'scissors'){
+            return 'Scissors'
+        }
+        
+        }
+
+
+        //RETURN randomly either 'rock', 'paper', or 'scissors'
+        function getComputerChoice(){
+        
+        //Use math.random to return a number greater than or equal to 0 and less than 1
+        //Multiply this number by 10 and round down
+        let num = Math.floor(Math.random() * 10);
+        
+        //If the number is between 0-3, return 'rock'
+        //If the numebr is between 3-6, return 'paper'
+        //If the number is between 6-9, return 'scissors'
+        if (num <= 3){
+        return 'Rock'
+        } else if (num >= 3 && num <= 6){
+        return 'Paper'
+        } else if (num >= 6 && num <= 9){
+        return 'Scissors'
+        }
+
+        }
+
+
+
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        
+        console.log(humanSelection);
+        console.log(computerSelection);
+
+        function playRound(humanChoice, computerChoice){
+        //Send a message based on whether the human loses or wins
+        //If humanSelection is rock and computerSelection is scissors, send "You win!"
+        //If humanSelection is paper and computerSelection is rock, send "You win!"
+        //If humanSelection is scissors and computerSelection is paper, send "You win!"
+        //If humanSelection is rock and computerSelection is paper, send "You lose!"
+        //If humanSelection is paper and computerSelection scissors, send "You lose!"
+        //If humanSelection is scissors and computerSelection is rock, send "You lose!"
+        if (humanSelection === 'Rock' && computerSelection === 'Scissors'){
+            return "You win!";
+        } else if (humanSelection === 'Paper' && computerSelection === 'Rock'){
+            return "You win!";
+        } else if (humanSelection === 'Scissors' && computerSelection === 'Paper'){
+            return "You win!";
+        } else if (humanSelection === 'Rock' && computerSelection === 'Paper'){
+            return "You lose!";
+        } else if (humanSelection === 'Paper' && computerSelection === 'Scissors'){
+            return "You lose!";
+        } else if (humanSelection === 'Scissors' && computerSelection === 'Rock'){
+            return "You lose!";
+        }
+
+        }
+
+        console.log(playRound(humanSelection, computerSelection));
+
+        //After first round is played, assign 1 point to winner (humanScore or computerScore)
+        //Print total score
+        //Resend Rock Paper Scissors message
+        //Assign 1 point to winner (humanScore or computerScore)
+        //Repeat above two steps until humanScore or computerScore reaches 5
+
+
+    
+        
+
+
+        
+        
+       
+
+        
+      
+        
+        
+        
+        
+        
+        
+
+        </script>
+    </body>
+</html>
