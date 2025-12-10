@@ -92,7 +92,7 @@
         //After first round is played, assign 1 point to winner (humanScore or computerScore)
         //Print total score
         const message = playRound();
-        function score(phrase){
+        function scoreRoundOne(phrase){
             if (message === "You win!"){
                 return "Human Score" + " " + humanScore + 1
             } else if (message ==="You lose!") {
@@ -101,7 +101,7 @@
             
 
         }
-        console.log(score());
+        console.log(scoreRoundOne());
 
         function playGame(round){
             
