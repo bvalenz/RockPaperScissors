@@ -8,21 +8,21 @@
     <body>
         <script>     
       
-    
         function getHumanChoice(){
         let choice = prompt('Rock, Paper, or Scissors?');
-        choice = choice.toLowerCase (); 
+        choice = choice.toLowerCase ();
         if (choice === 'rock') {
             return 'Rock'
         } else if (choice === 'paper'){
             return 'Paper'
         } else if (choice === 'scissors'){
             return 'Scissors'
-        }  
+        }
+        
         }
 
-
         function getComputerChoice(){
+        
         let num = Math.floor(Math.random() * 10);
         if (num <= 3){
         return 'Rock'
@@ -31,7 +31,10 @@
         } else if (num >= 6 && num <= 9){
         return 'Scissors'
         }
+
         }
+
+
 
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
@@ -58,12 +61,11 @@
 
         console.log(playRound(humanSelection, computerSelection));
 
-         
-        const message = playRound();
         let humanScore = 0
         let computerScore = 0 
-        
-        function score(phrase){
+        const message = playRound();
+
+        function scoreRoundOne(){
             if (message === "You win!"){
                 return "Human Score" + " " + humanScore + 1
             } else if (message ==="You lose!") {
@@ -72,14 +74,14 @@
             
 
         }
-        console.log(score());
 
-        function playGame(round){
-            
+        console.log(scoreRoundOne());
 
-        }
-
-
+        //Round2
+        console.log(getHumanChoice());
+        console.log(getComputerChoice());
+        console.log(playRound(humanSelection, computerSelection));
+        
     
         
 
