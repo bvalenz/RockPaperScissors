@@ -8,7 +8,6 @@
     <body>
         <script>     
       
-        
 
         
 
@@ -110,10 +109,29 @@
         console.log(computerSelectionFive);
         console.log(playRound(humanSelectionFive, computerSelectionFive));
         console.log("Your Score" + " " + humanScore + " " + "Computer" + " " + computerScore);
+
+        console.log(humanScore, computerScore);
+        
+        function declareWinner(){
+            if (humanScore > computerScore)
+            return "Congratulations! You win the game!";
+         else {
+            return "Too bad! You lost the game.";
         }
+        }
+        console.log(declareWinner());
+
+        }
+        
+        
+        
+       
 
         playGame();
+
         
+        
+    
 
   
         
