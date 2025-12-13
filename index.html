@@ -8,6 +8,12 @@
     <body>
         <script>     
       
+        
+
+        
+
+        function playGame(){
+        
         function getHumanChoice(){
         let choice = prompt('Rock, Paper, or Scissors?');
         choice = choice.toLowerCase ();
@@ -23,17 +29,16 @@
 
         function getComputerChoice(){
         
-        let num = Math.floor(Math.random() * 10);
-        if (num <= 3){
+        let num = Math.floor(Math.random() * 3);
+        if (num === 0){
         return 'Rock'
-        } else if (num >= 3 && num <= 6){
+        } else if (num === 1){
         return 'Paper'
-        } else if (num >= 6 && num <= 9){
+        } else if (num === 2){
         return 'Scissors'
         }
 
         }
-
 
 
         const humanSelection = getHumanChoice();
@@ -42,50 +47,75 @@
         console.log(humanSelection);
         console.log(computerSelection);
 
-        function playRound(humanChoice, computerChoice){
-        if (humanSelection === 'Rock' && computerSelection === 'Scissors'){
-            return "You win!";
-        } else if (humanSelection === 'Paper' && computerSelection === 'Rock'){
-            return "You win!";
-        } else if (humanSelection === 'Scissors' && computerSelection === 'Paper'){
-            return "You win!";
-        } else if (humanSelection === 'Rock' && computerSelection === 'Paper'){
-            return "You lose!";
-        } else if (humanSelection === 'Paper' && computerSelection === 'Scissors'){
-            return "You lose!";
-        } else if (humanSelection === 'Scissors' && computerSelection === 'Rock'){
-            return "You lose!";
-        }
-
-        }
-
-        console.log(playRound(humanSelection, computerSelection));
-
         let humanScore = 0
-        let computerScore = 0 
-        const message = playRound();
-
-        function scoreRoundOne(){
-            if (message === "You win!"){
-                return "Human Score" + " " + humanScore + 1
-            } else if (message ==="You lose!") {
-                return "Computer Score" + " " + computerScore + 1
-            }
-            
-
+        let computerScore = 0
+        
+        function playRound(humanChoice, computerChoice){
+        if (humanChoice === 'Rock' && computerChoice === 'Scissors'){
+            humanScore++;
+            return "You win!";
+        } else if (humanChoice === 'Paper' && computerChoice === 'Rock'){
+            humanScore++;
+            return "You win!";
+        } else if (humanChoice === 'Scissors' && computerChoice === 'Paper'){
+            humanScore++;
+            return "You win!";
+        } else if (humanChoice === 'Rock' && computerChoice === 'Paper'){
+            computerScore++;
+            return "You lose!";
+        } else if (humanChoice === 'Paper' && computerChoice === 'Scissors'){
+            computerScore++;
+            return "You lose!";
+        } else if (humanChoice === 'Scissors' && computerChoice === 'Rock'){
+            computerScore++;
+            return "You lose!";
         }
 
-        console.log(scoreRoundOne());
-
-        //Round2
-        console.log(getHumanChoice());
-        console.log(getComputerChoice());
+        }
+        
+        
+        //Round 1
         console.log(playRound(humanSelection, computerSelection));
-        
-    
+        console.log("Your Score" + " " + humanScore + " " + "Computer" + " " + computerScore);
+
+        //Round 2
+        const humanSelectionTwo = getHumanChoice();
+        const computerSelectionTwo = getComputerChoice();
+        console.log(humanSelectionTwo);
+        console.log(computerSelectionTwo);
+        console.log(playRound(humanSelectionTwo, computerSelectionTwo));
+        console.log("Your Score" + " " + humanScore + " " + "Computer" + " " + computerScore);
         
 
+        //Round 3
+        const humanSelectionThree = getHumanChoice();
+        const computerSelectionThree = getComputerChoice();
+        console.log(humanSelectionThree);
+        console.log(computerSelectionThree);
+        console.log(playRound(humanSelectionThree, computerSelectionThree));
+        console.log("Your Score" + " " + humanScore + " " + "Computer" + " " + computerScore);
+        
+        //Round 4
+        const humanSelectionFour = getHumanChoice();
+        const computerSelectionFour = getComputerChoice();
+        console.log(humanSelectionFour);
+        console.log(computerSelectionFour);
+        console.log(playRound(humanSelectionFour, computerSelectionFour));
+        console.log("Your Score" + " " + humanScore + " " + "Computer" + " " + computerScore);
 
+        //Round 5
+        const humanSelectionFive = getHumanChoice();
+        const computerSelectionFive = getComputerChoice();
+        console.log(humanSelectionFive);
+        console.log(computerSelectionFive);
+        console.log(playRound(humanSelectionFive, computerSelectionFive));
+        console.log("Your Score" + " " + humanScore + " " + "Computer" + " " + computerScore);
+        }
+
+        playGame();
+        
+
+  
         
         
        
